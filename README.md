@@ -3,15 +3,15 @@
 
 ## Add it to your project
   ### Install
-1. Run `npm install react-native-scrollable-tabview --save`
-2. Run `yarn add react-native-scrollable-tabview`
+1. Run `npm install @valdio/react-native-scrollable-tabview --save`
+2. Run `yarn add @valdio/react-native-scrollable-tabview`
 
 ### Import
 `import {
  ScrollableTabView,
  DefaultTabBar,
  ScrollableTabBar,
-} from 'react-native-scrollable-tabview'`
+} from '@valdio/react-native-scrollable-tabview'`
 
 ## Demo
 |![Screenshot](https://github.com/valdio/react-native-scrollable-tabview/blob/master/demo_images/demo-fb.gif)|![Screenshot](https://github.com/valdio/react-native-scrollable-tabview/blob/master/demo_images/scrollable_example.mov.gif)|![Screenshot](https://github.com/valdio/react-native-scrollable-tabview/blob/master/demo_images/collapsible_demo.gif)|
@@ -20,7 +20,7 @@
 ## Basic usage
 
 ```javascript
-import {ScrollableTabView} from 'react-native-scrollable-tabview'
+import {ScrollableTabView} from '@valdio/react-native-scrollable-tabview'
 
 export default class App extends Component {
   render() {
@@ -41,7 +41,7 @@ Suppose we had a custom tab bar called `CustomTabBar`, we would inject
 it into our `ScrollableTabView` like this:
 
 ```javascript
-import {ScrollableTabView} from 'react-native-scrollable-tabview'
+import {ScrollableTabView} from '@valdio/react-native-scrollable-tabview'
 import CustomTabBar from './CustomTabBar';
 
 export default class App extends Component {
@@ -63,7 +63,7 @@ To start you can just copy [DefaultTabBar](https://github.com/skv-headless/react
 You can change tabs programmatically. Just use `goToPage` method.
 
 ```javascript
-import {ScrollableTabView} from 'react-native-scrollable-tabview'
+import {ScrollableTabView} from '@valdio/react-native-scrollable-tabview'
 
 export default class App extends Component {
   render() {
