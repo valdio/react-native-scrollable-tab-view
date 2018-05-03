@@ -24,15 +24,10 @@
   "bugs": {
     "url": "https://github.com/brentvatne/react-native-scrollable-tab-view/issues"
   },
-  "peerDependencies": {
-    "react-native": ">=0.20.0"
-  },
+  "peerDependencies": {},
   "homepage": "https://github.com/brentvatne/react-native-scrollable-tab-view#readme",
   "dependencies": {
     "react-timer-mixin": "^0.13.3"
   },
-  "devDependencies": {
-    "babel-eslint": "^6.1.2",
-    "eslint": "^3.1.1"
-  }
+  "devDependencies": {}
 }
