@@ -1,5 +1,5 @@
 {
-  "name": "react-native-scrollable-tabview",
+  "name": "@valdio/react-native-scrollable-tabview",
   "version": "0.7.5",
   "description": "",
   "main": "index.js",
