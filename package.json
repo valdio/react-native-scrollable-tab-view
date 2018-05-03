@@ -1,6 +1,6 @@
 {
-  "name": "react-native-scrollable-tab-view",
-  "version": "0.7.4",
+  "name": "react-native-scrollable-tabview",
+  "version": "0.7.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brentvatne/react-native-scrollable-tab-view.git"
+    "url": "git+https://github.com/valdio/react-native-scrollable-tabview.git"
   },
   "keywords": [
     "react-native-component",
@@ -19,13 +19,13 @@
     "tab",
     "scrollable"
   ],
-  "author": "Brent Vatne",
+  "author": "Valdio Veliu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brentvatne/react-native-scrollable-tab-view/issues"
+    "url": "https://github.com/valdio/react-native-scrollable-tabview/issues"
   },
   "peerDependencies": {},
-  "homepage": "https://github.com/brentvatne/react-native-scrollable-tab-view#readme",
+  "homepage": "https://github.com/valdio/react-native-scrollable-tabview#readme",
   "dependencies": {
     "react-timer-mixin": "^0.13.3"
   },
