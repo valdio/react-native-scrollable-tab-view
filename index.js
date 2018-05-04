@@ -171,7 +171,6 @@ class ScrollableTabView extends Component {
       scrollEventThrottle={16}
       scrollsToTop={false}
       showsHorizontalScrollIndicator={false}
-      showsVerticalScrollIndicator={false}
       scrollEnabled={!this.props.locked}
       directionalLockEnabled
       alwaysBounceVertical={false}
@@ -299,6 +298,7 @@ class ScrollableTabView extends Component {
     const ContainerView = this.props.collapsableBar ? ScrollView : View
 
     return (<ContainerView style={[styles.container, this.props.style]}
+                           showsVerticalScrollIndicator={false}
                            onLayout={this._handleLayout} //()=>
                            ref={contentView => this.contentView = contentView}
                            onMomentumScrollEnd={event => {
