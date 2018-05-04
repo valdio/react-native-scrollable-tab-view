@@ -171,6 +171,7 @@ class ScrollableTabView extends Component {
       scrollEventThrottle={16}
       scrollsToTop={false}
       showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
       scrollEnabled={!this.props.locked}
       directionalLockEnabled
       alwaysBounceVertical={false}
