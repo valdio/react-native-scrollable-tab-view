@@ -4,7 +4,7 @@ import {
   TouchableHighlight, View
 } from 'react-native'
 import TimerMixin from 'react-timer-mixin'
-import {ScrollableTabView, ScrollableTabBar} from 'react-native-scrollable-tab-view'
+import {ScrollableTabView, ScrollableTabBar} from 'react-native-scrollable-tabview'
 
 const Child = () => class ChildComponent extends Component {
   constructor(props) {

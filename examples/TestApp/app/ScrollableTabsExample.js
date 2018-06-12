@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Text, View} from 'react-native'
-import {ScrollableTabView, ScrollableTabBar} from 'react-native-scrollable-tab-view'
+import {ScrollableTabView, ScrollableTabBar} from 'react-native-scrollable-tabview'
 
 export default class ScrollableTabsExample extends Component {
   render() {

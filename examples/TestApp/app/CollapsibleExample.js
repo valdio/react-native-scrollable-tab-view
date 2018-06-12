@@ -73,11 +73,8 @@ const FirstRoute = () => <View style={[styles.container, {}]}>
   <Text>shkfegffsd</Text>
   <Text>ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ</Text>
 </View>
-const SecondRoute = () => <View style={[styles.container, {backgroundColor: '#673ab7'}]}/>
-const ThirdRoute = () => <View style={[styles.container, {backgroundColor: '#31b714'}]}/>
-const FourthRoute = () => <View style={[styles.container, {backgroundColor: '#b7230b'}]}/>
 
-import {ScrollableTabView, DefaultTabBar} from 'react-native-scrollable-tab-view'
+import {ScrollableTabView, DefaultTabBar} from 'react-native-scrollable-tabview'
 
 export default class CollapsibleExample extends Component {
   render() {

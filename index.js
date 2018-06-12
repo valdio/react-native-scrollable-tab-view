@@ -339,6 +339,7 @@ ScrollableTabView.propTypes = {
   contentProps: PropTypes.object,
   scrollWithoutAnimation: PropTypes.bool,
   locked: PropTypes.bool,
+  hideTabBar: PropTypes.bool,
   prerenderingSiblingsNumber: PropTypes.number,
   collapsableBar: PropTypes.node
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Text, View} from 'react-native'
 
-import {ScrollableTabView, DefaultTabBar} from 'react-native-scrollable-tab-view'
+import {ScrollableTabView, DefaultTabBar} from 'react-native-scrollable-tabview'
 
 export default class SimpleExample extends Component {
   render() {

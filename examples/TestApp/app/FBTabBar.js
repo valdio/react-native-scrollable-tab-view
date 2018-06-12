@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 
 import TabBar from './TabBar'
-import {ScrollableTabView} from 'react-native-scrollable-tab-view'
+import {ScrollableTabView} from 'react-native-scrollable-tabview'
 
 export default class FBTabBar extends Component {
 

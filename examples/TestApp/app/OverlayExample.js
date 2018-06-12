@@ -4,7 +4,7 @@ import {
   ScrollView
 } from 'react-native'
 
-import {ScrollableTabView, DefaultTabBar} from 'react-native-scrollable-tab-view'
+import {ScrollableTabView, DefaultTabBar} from 'react-native-scrollable-tabview'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class OverlayExample extends Component {
