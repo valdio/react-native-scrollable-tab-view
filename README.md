@@ -126,10 +126,11 @@ import {ScrollableTabView} from '@valdio/react-native-scrollable-tabview'
 
 export default class Test extends Component {
   
+  //execute callback in order to stop the refresh animation. 
   _onRefresh = (callback) => {
-    //execute callback in order to stop the refresh animation.
-    setTimeout(callback({test: 'test'}, 3000))
-  }
+    networkReqyest().then(response => callback(response))    
+  } 
+  
    render() {
       return <ScrollableTabView
         refreshControlStyle={{backgroundColor: 'red'}}
