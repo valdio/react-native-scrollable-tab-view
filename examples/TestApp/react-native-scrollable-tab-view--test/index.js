@@ -169,8 +169,18 @@ class ScrollableTabView extends Component {
   }
 
   renderScrollableContent() {
+    //in case of the collapsible scroll view the pull to refresh animation  will be applied on the container
+    //on the other case the refresh animations will be applied here.
+    const isContainerScrollView = this.props.collapsableBar ? true : false
+
     const scenes = this._composeScenes()
     return <Animated.ScrollView
+      refreshControl={!isContainerScrollView &&
+      <RefreshControl style={this.props.refreshControlStyle || {}}
+                      refreshing={this.state.refreshing}
+                      onRefresh={this._onRefresh}/> || {}}
+      showsVerticalScrollIndicator={this.props.showsVerticalScrollIndicator}
+      showsHorizontalScrollIndicator={this.props.showsHorizontalScrollIndicator}
       horizontal
       pagingEnabled
       automaticallyAdjustContentInsets={false}
@@ -181,7 +191,6 @@ class ScrollableTabView extends Component {
       onMomentumScrollEnd={this._onMomentumScrollBeginAndEnd}
       scrollEventThrottle={16}
       scrollsToTop={false}
-      showsHorizontalScrollIndicator={false}
       scrollEnabled={!this.props.locked}
       directionalLockEnabled
       alwaysBounceVertical={false}
