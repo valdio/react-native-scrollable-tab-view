@@ -171,11 +171,6 @@ class ScrollableTabView extends Component {
   renderScrollableContent() {
     const scenes = this._composeScenes()
     return <Animated.ScrollView
-      refreshControl={
-        <RefreshControl style={this.props.refreshControlStyle || {}}
-                        refreshing={this.state.refreshing}
-                        onRefresh={this._onRefresh}/>
-      }
       horizontal
       pagingEnabled
       automaticallyAdjustContentInsets={false}
@@ -312,14 +307,22 @@ class ScrollableTabView extends Component {
       }
     }
     const ContainerView = this.props.collapsableBar ? ScrollView : View
+    const isScrollView = this.props.collapsableBar ? true : false
 
-    return (<ContainerView style={[styles.container, this.props.style]}
-                           onLayout={this._handleLayout} //()=>
-                           ref={contentView => this.contentView = contentView}
-                           onMomentumScrollEnd={event => {
-                             this.contentScrollDistance = event.nativeEvent.contentOffset.y
-                           }}
-                           stickyHeaderIndices={this.props.collapsableBar ? [1] : []}>
+    return (<ContainerView
+        refreshControl={isScrollView &&
+        <RefreshControl style={this.props.refreshControlStyle || {}}
+                        refreshing={this.state.refreshing}
+                        onRefresh={this._onRefresh}/> || {}}
+        showsVerticalScrollIndicator={this.props.showsVerticalScrollIndicator || true}
+        showsHorizontalScrollIndicator={this.props.showsHorizontalScrollIndicator || true}
+        style={[styles.container, this.props.style]}
+        onLayout={this._handleLayout} //()=>
+        ref={contentView => this.contentView = contentView}
+        onMomentumScrollEnd={event => {
+          this.contentScrollDistance = event.nativeEvent.contentOffset.y
+        }}
+        stickyHeaderIndices={this.props.collapsableBar ? [1] : []}>
         {this.renderCollapsableBar()}
         {this.props.tabBarPosition === 'top' && this.renderTabBar(tabBarProps)}
         {this.renderScrollableContent()}

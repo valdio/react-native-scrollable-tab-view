@@ -115,7 +115,9 @@ export default class App extends Component {
 - **`prerenderingSiblingsNumber`** _(Integer)_ - pre-render nearby # sibling, `Infinity` === render all the siblings, default to 0 === render current page.
 - **`pullToRefresh`** _(Function)_ - function to perform in case of a pull to refresh action. This function required a callback to stop the refresh animation. Follow the example bellow
 - **`refreshControlStyle`** _(React style Object)_ - Style object applied to the `RefreshControl` React Component. 
-
+- **`showsVerticalScrollIndicator`** _(Bool)_ - Show scroll indicator 
+- **`showsHorizontalScrollIndicator`** _(Bool)_ - Show scroll indicator 
+ 
 ### Pull to refresh example
 
 ```javascript
