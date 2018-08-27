@@ -178,7 +178,7 @@ class ScrollableTabView extends Component {
       refreshControl={!isContainerScrollView &&
       <RefreshControl style={this.props.refreshControlStyle || {}}
                       refreshing={this.state.refreshing}
-                      onRefresh={this._onRefresh}/> || {}}
+                      onRefresh={this._onRefresh}/> || undefined}
       showsVerticalScrollIndicator={this.props.showsVerticalScrollIndicator}
       showsHorizontalScrollIndicator={this.props.showsHorizontalScrollIndicator}
       horizontal
@@ -322,7 +322,7 @@ class ScrollableTabView extends Component {
         refreshControl={isScrollView &&
         <RefreshControl style={this.props.refreshControlStyle || {}}
                         refreshing={this.state.refreshing}
-                        onRefresh={this._onRefresh}/> || {}}
+                        onRefresh={this._onRefresh}/> || undefined}
         showsVerticalScrollIndicator={isScrollView && this.props.showsVerticalScrollIndicator}
         showsHorizontalScrollIndicator={isScrollView && this.props.showsHorizontalScrollIndicator}
         style={[styles.container, this.props.style]}

@@ -77,15 +77,21 @@ const FirstRoute = () => <View style={[styles.container, {}]}>
 import {ScrollableTabView, DefaultTabBar} from 'react-native-scrollable-tabview'
 
 export default class CollapsibleExample extends Component {
+  _onRefresh = (callback) => {
+    setTimeout(callback({test: 'dkjdd'}, 3000))
+  }
+
   render() {
     const collapsableComponent = (
       <View style={{height: 300, backgroundColor: 'yellow', width: '100%'}}>
       </View>
     )
 
-    return <ScrollableTabView collapsableBar={collapsableComponent}
-                              tabBarBackgroundColor="white"
-                              renderTabBar={() => <DefaultTabBar/>}
+    return <ScrollableTabView
+      pullToRefresh={this._onRefresh}
+      collapsableBar={collapsableComponent}
+      tabBarBackgroundColor="white"
+      renderTabBar={() => <DefaultTabBar/>}
     >
       <View tabLabel='iOS' style={{backgroundColor: 'blue'}}>
         <FirstRoute/>
