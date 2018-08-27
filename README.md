@@ -113,7 +113,40 @@ export default class App extends Component {
 - **`contentProps`** _(Object)_ - props that are applied to root `ScrollView`/`ViewPagerAndroid`. Note that overriding defaults set by the library may break functionality; see the source for details.
 - **`scrollWithoutAnimation`** _(Bool)_ - on tab press change tab without animation.
 - **`prerenderingSiblingsNumber`** _(Integer)_ - pre-render nearby # sibling, `Infinity` === render all the siblings, default to 0 === render current page.
+- **`pullToRefresh`** _(Function)_ - function to perform in case of a pull to refresh action. This function required a callback to stop the refresh animation. Follow the example bellow
+- **`refreshControlStyle`** _(React style Object)_ - Style object applied to the `RefreshControl` React Component. 
 
+### Pull to refresh example
 
+```javascript
+import React, {Component} from 'react'
+import {ScrollableTabView} from '@valdio/react-native-scrollable-tabview'
+
+export default class Test extends Component {
+  
+  _onRefresh = (callback) => {
+    //execute callback in order to stop the refresh animation.
+    setTimeout(callback({test: 'test'}, 3000))
+  }
+   render() {
+      return <ScrollableTabView
+        refreshControlStyle={{backgroundColor: 'red'}}
+        pullToRefresh={this._onRefresh}
+      >
+        <ScrollView tabLabel="one" >
+          <View>
+            <Text>One</Text>
+          </View>
+        </ScrollView>
+        <ScrollView tabLabel="two" >
+          <View>
+            <Text>Two</Text>
+          </View>
+        </ScrollView>
+   
+      </ScrollableTabView>
+    }
+  }
+```
 
 **MIT Licensed**

@@ -10,13 +10,20 @@ const {
   ScrollView,
   StyleSheet,
   InteractionManager,
-  Platform
+  Platform,
+  RefreshControl
 } = ReactNative
 
 import TimerMixin from 'react-timer-mixin'
 import SceneComponent from './SceneComponent'
 import DefaultTabBar from './DefaultTabBar'
 import ScrollableTabBar from './ScrollableTabBar'
+
+/**
+ * pullToRefresh: function used to trigger pull to refresh action.
+ *                Function muns have a callback response in order to stop pull to refresh action.
+ * refreshControlStyle: style of RefreshControl
+ */
 
 class ScrollableTabView extends Component {
   constructor(props) {
@@ -62,8 +69,20 @@ class ScrollableTabView extends Component {
       scrollX: new Animated.Value(this.props.initialPage * width),
       scrollValue: new Animated.Value(this.props.initialPage),
       containerWidth: width,
-      sceneKeys: this.newSceneKeys({currentPage: this.props.initialPage})
+      sceneKeys: this.newSceneKeys({currentPage: this.props.initialPage}),
+      refreshing: false
     }
+  }
+
+  _onRefresh = () => {
+    //if there is not pullToRefresh function do nothing
+    if (!this.props.pullToRefresh)
+      return
+
+    this.setState({refreshing: true})
+    this.props.pullToRefresh(response => {
+      this.setState({refreshing: false})
+    })
   }
 
   componentDidMount() {
@@ -152,20 +171,17 @@ class ScrollableTabView extends Component {
   renderScrollableContent() {
     const scenes = this._composeScenes()
     return <Animated.ScrollView
+      refreshControl={
+        <RefreshControl style={this.props.refreshControlStyle || {}}
+                        refreshing={this.state.refreshing}
+                        onRefresh={this._onRefresh}/>
+      }
       horizontal
       pagingEnabled
       automaticallyAdjustContentInsets={false}
       contentOffset={{x: this.props.initialPage * this.state.containerWidth}}
-      ref={(scrollView) => {
-        this.scrollView = scrollView
-      }}
-      onScroll={
-        Animated.event([{
-          nativeEvent: {contentOffset: {x: this.state.scrollX}}
-        }], {
-          useNativeDriver: true
-        })
-      }
+      ref={scrollView => this.scrollView = scrollView}
+      onScroll={Animated.event([{nativeEvent: {contentOffset: {x: this.state.scrollX}}}], {useNativeDriver: true})}
       onMomentumScrollBegin={this._onMomentumScrollBeginAndEnd}
       onMomentumScrollEnd={this._onMomentumScrollBeginAndEnd}
       scrollEventThrottle={16}
@@ -298,7 +314,6 @@ class ScrollableTabView extends Component {
     const ContainerView = this.props.collapsableBar ? ScrollView : View
 
     return (<ContainerView style={[styles.container, this.props.style]}
-                           showsVerticalScrollIndicator={false}
                            onLayout={this._handleLayout} //()=>
                            ref={contentView => this.contentView = contentView}
                            onMomentumScrollEnd={event => {
@@ -339,7 +354,6 @@ ScrollableTabView.propTypes = {
   contentProps: PropTypes.object,
   scrollWithoutAnimation: PropTypes.bool,
   locked: PropTypes.bool,
-  hideTabBar: PropTypes.bool,
   prerenderingSiblingsNumber: PropTypes.number,
   collapsableBar: PropTypes.node
 }

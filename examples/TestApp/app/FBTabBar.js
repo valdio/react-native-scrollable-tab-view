@@ -11,10 +11,16 @@ import {ScrollableTabView} from 'react-native-scrollable-tabview'
 
 export default class FBTabBar extends Component {
 
+  _onRefresh = (callback) => {
+    setTimeout(callback({test: 'dkjdd'}, 3000))
+  }
+
   render() {
     return <ScrollableTabView
       style={{marginTop: 20}}
+      refreshControlStyle={{backgroundColor: 'red'}}
       initialPage={1}
+      pullToRefresh={this._onRefresh}
       renderTabBar={() => <TabBar/>}
     >
       <ScrollView tabLabel="ios-paper" style={styles.tabView}>
