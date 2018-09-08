@@ -78,7 +78,7 @@ import {ScrollableTabView, DefaultTabBar} from 'react-native-scrollable-tabview'
 
 export default class CollapsibleExample extends Component {
   _onRefresh = (callback) => {
-    setTimeout(callback({test: 'dkjdd'}, 3000))
+    callback && setTimeout(callback({test: 'dkjdd'}, 3000))
   }
 
   render() {

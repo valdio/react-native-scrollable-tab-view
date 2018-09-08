@@ -171,11 +171,12 @@ class ScrollableTabView extends Component {
   renderScrollableContent() {
     //in case of the collapsible scroll view the pull to refresh animation  will be applied on the container
     //on the other case the refresh animations will be applied here.
-    const isContainerScrollView = this.props.collapsableBar ? true : false
+    const isContainerScrollView = !!this.props.collapsableBar
 
     const scenes = this._composeScenes()
     return <Animated.ScrollView
-      refreshControl={!isContainerScrollView &&
+
+      refreshControl={!isContainerScrollView && this.props.pullToRefresh && typeof this.props.pullToRefresh === 'function' &&
       <RefreshControl style={this.props.refreshControlStyle || {}}
                       refreshing={this.state.refreshing}
                       onRefresh={this._onRefresh}/> || undefined}
@@ -319,7 +320,8 @@ class ScrollableTabView extends Component {
     const isScrollView = this.props.collapsableBar ? true : false
 
     return (<ContainerView
-        refreshControl={isScrollView &&
+
+        refreshControl={isScrollView && this.props.pullToRefresh && typeof this.props.pullToRefresh === 'function' &&
         <RefreshControl style={this.props.refreshControlStyle || {}}
                         refreshing={this.state.refreshing}
                         onRefresh={this._onRefresh}/> || undefined}
