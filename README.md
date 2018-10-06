@@ -129,7 +129,7 @@ export default class Test extends Component {
   
   //execute callback in order to stop the refresh animation. 
   _onRefresh = (callback) => {
-    networkReqyest().then(response => callback(response))    
+    networkRequest().then(response => callback(response))    
   } 
   
    render() {
