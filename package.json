@@ -2,7 +2,7 @@
   "name": "@valdio/react-native-scrollable-tabview",
   "version": "0.8.9",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc . --ignore-path .gitignore",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,15 +19,13 @@
     "tab",
     "scrollable"
   ],
-  "author": "Valdio Veliu",
+  "author": "Valdio Veliu <Valdio Veliu>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/valdio/react-native-scrollable-tabview/issues"
   },
   "peerDependencies": {},
   "homepage": "https://github.com/valdio/react-native-scrollable-tabview#readme",
-  "dependencies": {
-    "react-timer-mixin": "^0.13.3"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }

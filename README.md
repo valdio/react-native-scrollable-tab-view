@@ -110,7 +110,8 @@ export default class App extends Component {
 - **`tabBarActiveTextColor`** _(String)_ - color of the default tab bar's text when active, defaults to `navy`
 - **`tabBarInactiveTextColor`** _(String)_ - color of the default tab bar's text when inactive, defaults to `black`
 - **`tabBarTextStyle`** _(Object)_ - Additional styles to the tab bar's text. Example: `{fontFamily: 'Roboto', fontSize: 15}`
-- **`style`** _([View.propTypes.style](https://facebook.github.io/react-native/docs/view.html#style))_
+- **`style`** _([View.propTypes.style](https://facebook.github.io/react-native/docs/view.html#style))_ - Container style
+- **`contentStyle`** _([View.propTypes.style](https://facebook.github.io/react-native/docs/view.html#style))_ - Content style
 - **`contentProps`** _(Object)_ - props that are applied to root `ScrollView`/`ViewPagerAndroid`. Note that overriding defaults set by the library may break functionality; see the source for details.
 - **`scrollWithoutAnimation`** _(Bool)_ - on tab press change tab without animation.
 - **`prerenderingSiblingsNumber`** _(Integer)_ - pre-render nearby # sibling, `Infinity` === render all the siblings, default to 0 === render current page.
