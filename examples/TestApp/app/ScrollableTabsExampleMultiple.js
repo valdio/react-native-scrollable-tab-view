@@ -10,76 +10,16 @@ export default class ScrollableTabsExampleMultiple extends Component {
       initialPage={5}
       renderTabBar={() => <ScrollableTabBar/>}
       tabBarTextStyle={styles.tabText}
-      collapsableBar={<View style={styles.collapsibleTabBar}><Text>{Math.random() * 1000}</Text></View>}
-
-    >
+      collapsableBar={<View style={styles.collapsibleTabBar}><Text>{Math.random() * 1000}</Text></View>}>
       {tabs.map((tab, index) => buildTab('Tab', index))}
     </ScrollableTabView>
   }
 }
 const buildTab = (label, index) =>
-  <View key={`tab_${index}`} tabLabel={`${label} ${index + Math.random() * 100}`}>
+  <View key={`tab_${index}`} tabLabel={`${label} ${index}`}>
     <ScrollView>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
-      <Text>{`${label} ${index + Math.random() * 100}`}</Text>
       <Text>{`${label} ${index}`}</Text>
       <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-      <Text>{`${label} ${index}`}</Text>
-
     </ScrollView>
   </View>
 
