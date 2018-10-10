@@ -11,6 +11,7 @@ import {NativeRouter, Route, Link} from 'react-router-native'
 import CollapsibleExample from './app/CollapsibleExample'
 import OverlayExample from './app/OverlayExample'
 import ScrollableTabsExample from './app/ScrollableTabsExample'
+import ScrollableTabsExampleMultiple from './app/ScrollableTabsExampleMultiple'
 import FBTabBar from './app/FBTabBar'
 import SimpleExample from './app/SimpleExample'
 import DynamicExample from './app/DynamicExample'
@@ -57,6 +58,12 @@ const routes = [
     route: ROUTE.SCROLLABLE_TABS,
     title: 'Scrollable tabs',
     component: <ScrollableTabsExample/>
+  },
+  {
+    index: 4,
+    route: ROUTE.SCROLLABLE_TABS_MULTIPLE,
+    title: 'Scrollable tabs multiple',
+    component: <ScrollableTabsExampleMultiple/>
   },
   {
     index: 5,
