@@ -120,7 +120,7 @@ export default class App extends Component {
 - **`showsVerticalScrollIndicator`** _(Bool)_ - Show scroll indicator 
 - **`showsHorizontalScrollIndicator`** _(Bool)_ - Show scroll indicator 
 
-- **`disableTabBarOnLayout`** _(Bool)_ - Used on ScrollableTabBar to disable auto Layout of tabs. It sometimes causes a flickering effect. ==> <ScrollableTabBar disableTabBarOnLayout={true}/> 
+- **`disableTabBarOnLayout`** _(Bool)_ - Used on ScrollableTabBar to disable auto Layout of tabs. It sometimes causes a flickering effect. ==> ```<ScrollableTabBar disableTabBarOnLayout={true}/>``` 
  
 ### Pull to refresh example
 
