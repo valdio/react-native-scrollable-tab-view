@@ -1,6 +1,6 @@
 {
   "name": "@valdio/react-native-scrollable-tabview",
-  "version": "0.8.10",
+  "version": "0.8.11",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
