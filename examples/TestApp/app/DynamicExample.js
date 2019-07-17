@@ -3,7 +3,7 @@ import {
   Text,
   TouchableHighlight, View
 } from 'react-native'
-import TimerMixin from 'react-timer-mixin'
+// import TimerMixin from 'react-timer-mixin'
 import {ScrollableTabView, ScrollableTabBar} from 'react-native-scrollable-tabview'
 
 const Child = () => class ChildComponent extends Component {
@@ -41,7 +41,7 @@ export default class DynamicExample extends Component {
     }
   }
 
-  mixins = [TimerMixin]
+  // mixins = [TimerMixin]
   children = []
 
   componentDidMount() {

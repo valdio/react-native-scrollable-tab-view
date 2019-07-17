@@ -18,14 +18,14 @@ import DynamicExample from './app/DynamicExample'
 
 import {ROUTE} from './app/lib/route'
 const IndexRoutes = () => (<View style={styles.nav}>
-    {routes.map(route => <Link
-      key={route.index}
-      to={route.route}
-      underlayColor='#f0f4f7'
-      style={styles.navItem}>
-      <Text>{route.title}</Text>
+  {routes.map(route => <Link
+    key={route.index}
+    to={route.route}
+    underlayColor='#f0f4f7'
+    style={styles.navItem}>
+    <Text>{route.title}</Text>
     </Link>)}
-  </View>
+    </View>
 )
 
 const routes = [
@@ -34,49 +34,49 @@ const routes = [
     title: 'Home',
     route: ROUTE.INDEX,
     component: <IndexRoutes/>
-  },
-  {
-    index: 1,
+},
+{
+  index: 1,
     title: 'Tab Bar',
-    route: ROUTE.TAB_BAR,
-    component: <FBTabBar/>
-  },
-  {
-    index: 2,
+  route: ROUTE.TAB_BAR,
+  component: <FBTabBar/>
+},
+{
+  index: 2,
     title: 'Simple Example',
-    route: ROUTE.SIMPLE_EXAMPLE,
-    component: <SimpleExample/>
-  },
-  {
-    index: 3,
+  route: ROUTE.SIMPLE_EXAMPLE,
+  component: <SimpleExample/>
+},
+{
+  index: 3,
     route: ROUTE.OVERLAY,
-    title: 'Overlay',
-    component: <OverlayExample/>
-  },
-  {
-    index: 4,
+  title: 'Overlay',
+  component: <OverlayExample/>
+},
+{
+  index: 4,
     route: ROUTE.SCROLLABLE_TABS,
-    title: 'Scrollable tabs',
-    component: <ScrollableTabsExample/>
-  },
-  {
-    index: 4,
+  title: 'Scrollable tabs',
+  component: <ScrollableTabsExample/>
+},
+{
+  index: 4,
     route: ROUTE.SCROLLABLE_TABS_MULTIPLE,
-    title: 'Scrollable tabs multiple',
-    component: <ScrollableTabsExampleMultiple/>
-  },
-  {
-    index: 5,
+  title: 'Scrollable tabs multiple',
+  component: <ScrollableTabsExampleMultiple/>
+},
+{
+  index: 5,
     route: ROUTE.DYNAMIC_TABS,
-    title: 'Dynamic Tabs',
-    component: <DynamicExample/>
-  },
-  {
-    index: 6,
+  title: 'Dynamic Tabs',
+  component: <DynamicExample/>
+},
+{
+  index: 6,
     route: ROUTE.COLLAPSIBLE_TABS,
-    title: 'CollapsibleExample',
-    component: <CollapsibleExample/>
-  }
+  title: 'CollapsibleExample',
+  component: <CollapsibleExample/>
+}
 
 ]
 
@@ -84,19 +84,19 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this._renderRoutes()}
+      {this._renderRoutes()}
       </View>
-    )
+  )
   }
 
   _renderRoutes = () => <NativeRouter>
-    <View style={styles.container}>
-      {routes.map(route => {
+<View style={styles.container}>
+    {routes.map(route => {
         // const Component = route.component
         return <Route key={route.index} exact path={route.route} component={() => route.component}/>
       })}
     </View>
-  </NativeRouter>
+    </NativeRouter>
 
 }
 
