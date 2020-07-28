@@ -1,6 +1,8 @@
 
 ## react-native-scrollable-tabview
 
+## Deprecated for react-native > 0.62. updates in progress...
+
 ## Add it to your project
 
 ### Install
