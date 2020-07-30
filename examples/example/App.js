@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
+import React from 'react';
+import {Platform, SafeAreaView, Text, View} from 'react-native';
 import {NativeRouter, Route, Link} from 'react-router-native';
 
 import CollapsibleExample from './app/CollapsibleExample';
@@ -78,31 +77,33 @@ const routes = [
   },
 ];
 
-export default class App extends Component {
-  render() {
-    return <View style={styles.container}>{this._renderRoutes()}</View>;
-  }
-
-  _renderRoutes = () => (
-    <NativeRouter>
-      <View style={styles.container}>
-        {routes.map((route) => {
-          // const Component = route.component
-          return (
-            <Route
-              key={route.index}
-              exact
-              path={route.route}
-              component={() => route.component}
-            />
-          );
-        })}
-      </View>
-    </NativeRouter>
+export default function App() {
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <View style={styles.container}>{_renderRoutes()}</View>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
+_renderRoutes = () => (
+  <NativeRouter>
+    <View style={styles.container}>
+      {routes.map((route) => {
+        // const Component = route.component
+        return (
+          <Route
+            key={route.index}
+            exact
+            path={route.route}
+            component={() => route.component}
+          />
+        );
+      })}
+    </View>
+  </NativeRouter>
+);
+
+const styles = {
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -134,4 +135,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 15,
   },
-});
+};
